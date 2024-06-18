@@ -1,0 +1,552 @@
+1.Find all users from Mumbai who know JavaScript.
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            city:"Mumbai",
+            skills:"JavaScript"
+            
+            }
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+2.Find all female users who are above age 30.
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            gender:"Female",
+            age:{$gt:30}
+            }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+3.Find all users who have the same first name.
+
+db.users.aggregate
+(
+    [
+        {
+            $group: {
+            _id: "$firstName",
+            usercount:{$sum:1},
+            users:{$push:"$$ROOT"}
+            
+            }
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+4.Find the count of users for each role (admin, customer).
+
+db.users.aggregate
+(
+    [
+        {
+            $group: {
+            _id: "$role",
+            usercount:{$sum:1}
+            }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+5.How many users are from Mumbai?
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+                city:"Mumbai"
+            }
+        },
+        {
+            $count: 'UserFromMumbai'
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+6.How many male users are from Goa?
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            gender:"Male",
+            city:"Goa"
+            }
+        },
+        {
+            $count: 'MaleUsersFromGoa'
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+7.Find all users who have the same email domain (e.g., @gmail.com).
+
+db.users.aggregate
+(
+
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+8.Find all male users from Kolkata who know Python.
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            gender:"Male",
+            city:"Kolkata",
+            skills:"Python"
+            }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+9.Find all users who are from either Assam or Goa.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:{$in:["Assam","Goa"]}
+        }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+10.Find all users who have a salary greater than 1,000,000.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            salary:{$gt:1000000}
+        }
+        }
+    ]
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+11.Find the count of users who know Python.
+
+db.users.aggregate
+(
+    [
+            {
+            $match: {
+                skills:"Python"
+            }
+            },
+        {
+            $count: 'UsersWithPythonSkill'
+        }
+    ]
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+12.How many users are from Kolkata?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:"Kolkata"
+        }
+        },
+        {
+            $count: 'UsersFromKolkata'
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+13.How many male users are from Hyderabad who know JavaScript?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Male",
+        city:"Hyderabad",
+        skills:"JavaScript"
+        }
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+14.How many female users are from New Delhi who have a salary greater than 500,000?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Female",
+        city:"New Delhi",
+        salary:{$gt:500000}
+        }
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+15.Find all users who have the skill "Django" and are under the age of 30
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            skills:"Django",
+        age:{$lt:30}
+        }
+        }
+    ]
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+16.Find all users from Assam who know Kotlin.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:"Assam",
+        skills:"Kotlin"
+        }
+        }
+    ]   
+)
+
+17.Find all users who are from either Hyderabad or Jaipur.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:{$in:["Hyderabad","Jaipur"]}
+        }
+        }
+    ]
+)
+
+18.Find all female users from Mumbai who are under the age of 30.
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            gender:"Female",
+            city:"Mumbai",
+            age:{$lt:30}
+            }
+        }
+    ]
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+19.Find all male users who know both Java and SQL.
+
+db.users.aggregate
+(
+    [
+  {
+    $match: {
+      gender:"Male",
+      skills:{$all:["SQL","Java"]}
+    }
+  }
+]
+)  
+
+20.Find the count of users who have a salary less than 600,000.
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            salary:{$lt:600000}
+            }
+        },
+        {
+            $count: 'UsersWithSalaryLessThan600000'
+        }
+    ]
+)
+
+21.How many users are from Assam who know React?
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            city:"Assam",
+            skills:"React"
+            }
+        },
+        {
+            $count: 'UsersFromAssamWhoKnowReact'
+        }
+    ]
+)
+
+22.How many male users are from Goa who are above the age of 25?
+
+db.users.aggregate
+(
+    [
+        {
+            $match: {
+            gender:"Male",
+            city:"Goa",
+            age:{$gt:25}
+            }
+        },
+        {
+            $count: 'MaleUsersFromGoaAbouve25Age'
+        }
+    ]
+)
+
+23.Find all users who have a first name that starts with "A".
+
+***********************************************
+
+24.How many female users are from Kolkata who know both Django and SQL?
+
+db.users.aggregate
+(
+    [
+            {
+            $match: {
+                gender:"Female",
+            city:"Kolkata",
+            skills:{$all:["Django","SQL"]}
+            }
+            },
+        {
+            $count: 'UsersWhoKnowDjangoSQL'
+        }
+    ]
+)
+
+25.Find all users who have the role "admin" and are from New Delhi.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            role:"admin",
+        city:"New Delhi"
+        }
+        }
+    ]
+)
+
+26.Find all male users from Hyderabad who know Node.js.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Male",
+        city:"Hyderabad",
+        skills:"Node.js"
+        }
+        }
+    ]
+)
+
+27.Find all female users from Kolkata who are above age 25.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Female",
+        city:"Kolkata",
+        age:{$gt:25}
+        
+        }
+        }
+    ]
+)
+
+28.Find all users from Delhi who have a salary greater than 800,000.
+
+db.users.aggregate
+(
+[
+	{
+	  $match: {
+	    city:"New Delhi",
+      salary:{$gt:800000}
+	  }
+	}
+]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7
+
+29.Find all users who know both Java and Python.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            skills:{$all:["Java","Python"]}
+        }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+30.Find the count of users who are under the age of 30.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            age:{$lt:30}
+        }
+        },
+        {
+            $count: 'UsersUnderAge30'
+        }
+    ]
+)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+31.How many female users are from Mumbai who know C++?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Female",
+        city:"Mumbai",
+        skills:"C++"
+        }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+32.How many male users from Assam have a salary less than 500,000?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            gender:"Male",
+        city:"Assam",
+        salary:{$lt:500000}
+        }
+        },
+        {
+            $count: 'MaleUsersFromAssamWithLessSalary'
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+33.Find all users who have the last name "Sharma" and are from Jaipur.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            lastName:"Sharma",
+        city:"Jaipur"
+        }
+        }
+    ]
+)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+34.How many users from Goa know both HTML and CSS?
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:"Goa",
+        skills:{$all:["HTML","CSS"]}
+        }
+        },
+        {
+            $count: 'UsersFromGoaWithHTMLANDCSS'
+        }
+    ]
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+35.Find all users who are from either Hyderabad or Kolkata and know JavaScript.
+
+db.users.aggregate
+(
+    [
+        {
+        $match: {
+            city:{$in:["Hyderabad","Kolkata"]},
+        skills:"JavaScript"
+        }
+        }
+    ]
+)
