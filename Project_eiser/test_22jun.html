@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+const findMax = (...inputs) => {
+    return Math.max(...inputs);
+};
+const subtractValues = (max, userInput) => {
+    return userInput - max;
+};
+const processInputs = (...inputs) => {
+   
+
+    const max = findMax(...inputs);
+    if (max > 90) {
+        const userInput = prompt("Please enter a value:"); 
+        const result = subtractValues(max, parseInt(userInput));
+
+        if (result > 0) {
+            return Math.pow(result, 3); 
+        } else if (result < 0) {
+            return Math.pow(result, 2); 
+        } else {
+            console.log("aur nahi ho raha hai merese"); 
+        }
+    } else {
+        return max;
+    }
+};
+
+
+const inputs = [91, 85, 78, 93, 88];
+const result = processInputs(...inputs);
+if (result !== undefined) {
+    console.log(result);
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
