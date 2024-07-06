@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+          *{
+           margin: 0px;
+           padding: 0px;
+           box-sizing: border-box;
+        }
+        .box1{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            background: #f6f6f6;
+        }
+        .box1A{
+            /* border: 1px solid black; */
+            width: 70%;
+            display: flex;
+            /* justify-content: space-between; */
+            
+            
+        }
+        .box1Aa{
+            /* border: 1px solid black; */
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .box1Ac{
+            /* border: 1px solid black; */
+            width: 50%;
+            padding: 70px;
+        }   
+        .box1Ab{
+            /* border: 1px solid black; */
+            width: 20%;
+            display: flex;
+            align-items: center;
+        }
+        .box2{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .box2A{
+            width: 70%;
+            /* border: 1px solid black; */
+            border-bottom: 1px solid gray;
+            padding-top: 60px;
+            display: flex;
+            align-items: end;
+        }
+        #p1{
+            margin-left: 20px;
+        }
+        #p2{
+            margin-left: 500px;
+        }
+        #p3{
+            margin-left: 120px;
+        }
+        #p4{
+            margin-left: 70px;
+        }
+        .box3{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+        }
+        .box3A{
+            /* border: 1px solid rgb(32, 18, 219); */
+            width: 15%;
+        
+        }
+         .box3B{
+            /* border: 1px solid green; */
+            width: 70%;
+        }
+        .box3Ba{
+            /* border: 1px solid grey; */
+            border-bottom: 1px solid grey;
+            width: 100%;
+            display: flex;
+        }
+         .box3Ba1{
+            /* border: 1px solid black; */
+            width:20%; 
+            padding: 10px;
+        }
+          .box3Ba2{
+            /* border: 1px solid black; */
+            width:40%; 
+            display: flex;
+            align-items: center;
+        }
+          .box3Ba3{
+            /* border: 1px solid black; */
+            width:10%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+          .box3Ba4{
+            /* border: 1px solid black; */
+            width:20%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+          .box3Ba5{
+            /* border: 1px solid black; */
+            width:10%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box4{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .box4A{
+            /* border: 1px solid black; */
+            width: 70%;
+            display: flex;
+            border-bottom: 1px solid grey;
+        }
+        .box4Aa{
+            /* border: 1px solid black; */
+            width: 50%;
+        }
+        .box4Ab{
+            /* border: 1px solid black; */
+            width: 50%;
+        }
+        .box4A button{
+            padding: 7px;
+            /* margin-left: 10px; */
+            margin: 10px;
+            border-color: gray;
+        }
+        .box4A input{
+            padding: 5px;
+        }
+        .box5{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .box5A{
+            width: 70%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: end;
+            border-bottom: 1px solid grey;
+        }
+        .box5Aa{
+            /* border: 1px solid black; */
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .box5Aa p{
+            padding: 5px;
+        }
+        .box6{
+            width: 100vw;
+            /* border: 1px solid black; */
+            display:  flex;
+            justify-content: center;
+        }
+        .box6A{
+            width: 70%;
+            /* border: 1px solid black; */
+            display:  flex;
+            justify-content: end;
+            border-bottom: 1px solid grey;
+        }
+        .box6Aa{
+            width: 30%;
+            /* border: 1px solid black; */
+            display:  flex;
+            justify-content: space-between;
+        }
+        .Rate{
+            line-height: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .Rate button{
+            padding: 4px;
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+        .Rate select{
+            padding: 4px;
+            margin-top: 10px;
+        }
+        #inp{
+            padding: 4px;
+            margin-top: 10px;
+        }
+        .box7{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content:  center;
+        }
+        .box7A{
+            /* border: 1px solid black; */
+            width: 70%;
+            display: flex;
+            justify-content: end;
+            padding-top: 10px;
+            padding-bottom: 40px;
+            
+        }
+        #btn2{
+            background-color:#71cd14;;
+            color: white;
+            padding: 7px;
+            margin-left:10px;
+            border: none;
+            border-radius: 3px;
+            
+        }
+        
+
+
+
+
+
+
+    </style>
+
+
+    <div class="box1">
+        <div class="box1A">
+            <div class="box1Aa">
+                <h1>Cart</h1>
+                <p>Very us move be blessed multiply night</p>
+            </div>
+            <div class="box1Ac"></div>
+            <div class="box1Ab">
+                <p style="margin-left: 90px;">Home / Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box2">
+        <div class="box2A">
+            <p id="p1">Product</p>
+            <p id="p2">Price</p>
+            <p id="p3">Quantity</p>
+            <p id="p4">Total</p>
+        </div>
+    </div>
+    
+    <div class="box3">
+        <div class="box3A"></div>
+        <div class="box3B">
+            <div class="box3Ba">
+                <div class="box3Ba1"><img src="cart-1.jpg" alt=""></div>
+                <div class="box3Ba2"><p>
+Minimalistic shop for multipurpose use</p></div>
+                <div class="box3Ba3"><p>$360.00</p></div>
+                <div class="box3Ba4">1</div>
+                <div class="box3Ba5"><p>$720.00</p></div>
+            </div>
+            <div class="box3Ba">
+               <div class="box3Ba1"><img src="cart-1.jpg" alt=""></div>
+                <div class="box3Ba2"><p>
+Minimalistic shop for multipurpose use</p></div>
+                <div class="box3Ba3"><p>$360.00</p></div>
+                <div class="box3Ba4">2</div>
+                <div class="box3Ba5"><p>$720.00</p></div>
+            </div>
+            <div class="box3Ba">
+                <div class="box3Ba1"><img src="cart-1.jpg" alt=""></div>
+                <div class="box3Ba2"><p>
+Minimalistic shop for multipurpose use</p></div>
+                <div class="box3Ba3"><p>$360.00</p></div>
+                <div class="box3Ba4">1</div>
+                <div class="box3Ba5"><p>$720.00</p></div>  
+            </div>
+        </div>
+        <div class="box3A"></div>
+    </div>
+    <div class="box4">
+        <div class="box4A">
+            <div class="box4Aa">
+                <button style="background-color: #f6f6f6;">UPTATE CART</button>
+            </div>
+            <div class="box4Ab">
+                <input type="text" placeholder="COUPON CODE">
+                <BUtton style="background-color: green; border: none; width: 100px; padding: 7px; border-radius: 5px; color: white;">APPLY</BUtton>
+                <BUtton style="background-color: #f6f6f6;">CLOSE COUPON</BUtton>
+            </div>
+        </div>
+    </div>
+    <div class="box5">
+        <div class="box5A">
+            <div class="box5Aa">
+                <p>Subtotal</p>
+                <p>$2160.00</p>
+            </div>
+        </div>
+    </div>
+    <div class="box6">
+        <div class="box6A">
+            <div class="box6Aa">
+                <div><p>Shipping</p></div>
+                <div class="Rate">
+                    <p>Flat Rate: $5.00  </p> 
+                    <p>Free Shipping</p>
+                    <p><p>Flat Rate: $5.00</p></p>
+                    <p>Local Delivery: $2.00</p>
+                    <p>Calculate Shipping</p>
+                    
+                    <select name="Country" id="Country">
+                        <option value="Bagladesh">Bagladesh</option>
+                        <option value="India">India</option>
+                        <option value="Pakisthan">Pakisthan</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="Select State">Select State</option>
+                        <option value="Select State">Select State</option>
+                        <option value="Select State">Select State</option>
+                      </select>
+                      <input id="inp" type="text" value="Passcode/Zipcode">
+                    <button>UPTATE DETAILS</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="box7">
+        <div class="box7A">
+            <button id="btn1">CONTINUE SHIPPING</button>
+            <button id="btn2">PROCED TO CHECKOUT</button>
+        </div>
+    </div>
+
+</body>
+</html>
