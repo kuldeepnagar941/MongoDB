@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    font-size: 20px;
+}
+
+
+.shop_category{
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    background-color: rgb(247, 244, 244); 
+}
+.shop_cat_L{
+    padding: 4.5% 0%; 
+    padding-left: 10%;
+    width: 28%;
+}
+.shop_cat_R{
+    padding: 4.5% 0%;
+    width: 28%; 
+    display: flex;
+    align-items: center;
+}
+.shop_cat_L h3{
+    color: black;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.shop_cat_L h5{
+    color: grey;
+    font-weight: 100;
+    font-size: 0.7rem;
+    margin-top: 5%;
+}
+.shop_cat_R h5{
+    color: grey;
+    font-weight: 100;
+    font-size: 0.7rem;
+}
+.shop_cat_R a{
+    text-decoration: none;
+}
+
+
+
+.map_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map_inner_box{
+    width: 80%;
+    height: 50vh;
+    background-color: rgb(222, 219, 219);
+    margin-top: 7%;
+}
+
+
+
+.get_in_touch{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.get_in_touch_inner_box{
+    width: 85%;
+    display: flex;
+}
+.get_in_touch_inner_box_L{
+    width: 65%;
+}
+.get_in_touch_inner_box_R{
+    width: 35%;
+}
+.get_in_touch_inner_box_L h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.get_in_touch_inner_box_L input{
+    width: 100%;
+    padding-right: 10%;
+    padding-bottom: 20%;
+    padding-left: 2%;
+    padding-top: 1%;
+    border: 1px solid rgb(209, 207, 207);
+    font-size: 0.7rem;
+    font-weight: 200;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.input_box{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.input_box input{
+    width: 48%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 207, 207);
+}
+#enter_sub{
+    width: 100%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-top: 1%;
+    border: 1px solid rgb(209, 207, 207);
+    font-size: 0.7rem;
+    font-weight: 200;
+    margin-top: 4%;
+    border-radius: 5px;
+}
+.get_in_touch_inner_box_L button{
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #71cd14;
+    margin-top: 5%;
+    color: white;
+}
+.get_in_touch_inner_box_R_info{
+    margin-top: 12%;
+    margin-left: 7%;
+    display: flex;
+}
+.get_in_touch_inner_box_R_info1{
+    margin: 5% 0%;
+    margin-left: 7%;
+    display: flex;
+}
+.get_in_touch_inner_box_R_info2{
+    margin-left: 7%;
+    display: flex;
+}
+.get_in_touch_logo_box{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.get_in_touch_info_box{
+    width: 85%;
+}
+.get_in_touch_info_box a{
+    text-decoration: none;
+    color: black;
+}
+.get_in_touch_info_box h5{
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+.get_in_touch_info_box h6{
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: grey;
+    margin-top: 1%;
+}
+
+    </style>
+
+
+</head>
+<body>
+    
+
+ 
+ <div class="shop_category">
+    <div class="shop_cat_L">
+        <h3>Contact Us</h3>
+        <h5>Very us move be blessed multiply night</h5>
+    </div>
+    <div class="shop_cat_R">
+        <a href="">
+        <h5>Home / Contact Us</h5>
+        </a>
+    </div>
+ </div>
+ 
+
+
+ <div class="map_box"> 
+    <div class="map_inner_box"></div>
+ </div>
+ 
+
+
+ <div class="get_in_touch">
+    <div class="get_in_touch_inner_box">
+        <div class="get_in_touch_inner_box_L">
+            <h2>Get in Touch</h2>
+            <input type="text" placeholder="Enter Message">
+            <div class="input_box">
+                <input type="text" placeholder="Enter Your Name">
+                <input type="text" placeholder="Enter email address">
+            </div>
+            <input type="text" placeholder="Enter Subject" id="enter_sub">
+            <button>SEND MESSAGE</button>
+        </div>
+        <div class="get_in_touch_inner_box_R">
+                <div class="get_in_touch_inner_box_R_info">
+                    <div class="get_in_touch_logo_box">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="get_in_touch_info_box">
+                        <h5>Buttonwood, California.</h5>
+                        <h6>Rosemead, CA 91770</h6>
+                    </div>
+                </div>
+                <div class="get_in_touch_inner_box_R_info1">
+                    <div class="get_in_touch_logo_box">
+                        <i class="fa-solid fa-mobile"></i>
+                    </div>
+                    <div class="get_in_touch_info_box">
+                        <a href="">
+                            <h5>00(440)9865562</h5>
+                        </a>
+                        <h6>Mon to Fri 9am to 6pm</h6>
+                    </div>  
+                </div>
+                <div class="get_in_touch_inner_box_R_info2">
+                    <div class="get_in_touch_logo_box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="get_in_touch_info_box">
+                        <a href="">
+                            <h5>support@colorlib.com</h5>
+                        </a>
+                        <h6>Send us your query anytime!</h6>
+                    </div>
+                </div>
+        </div>
+    </div>
+ </div>
+ 
+
+</body>
+</html>
